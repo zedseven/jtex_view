@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace jtex.Properties
+namespace Jtex.Properties
 {
 
 
