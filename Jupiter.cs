@@ -12,15 +12,8 @@ using System.Linq;
 
 namespace Jtex
 {
-    public static class Picross
+    public static class Jupiter
     {
-        internal static void OpenFile(string path, bool autoSave = false, bool crop = true, char format = 'X')
-        {
-            // Handle file
-            if (!File.Exists(path)) throw new Exception("Can only accept files, not folders");
-             MakeBmp(path, autoSave, crop);
-        }
-
         internal static Image MakeBmp(string path, bool autoSave = false, bool crop = true)
         {
             Jtex tex = Analyze(path);
