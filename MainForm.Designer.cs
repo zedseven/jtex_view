@@ -1,4 +1,6 @@
-﻿namespace Jtex
+﻿using System.Drawing.Drawing2D;
+
+namespace Jtex
 {
     partial class MainForm
     {
@@ -14,9 +16,7 @@
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
+	            components.Dispose();
             base.Dispose(disposing);
         }
 
@@ -28,54 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			this.SuspendLayout();
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Location = new System.Drawing.Point(12, 35);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-			this.pictureBox1.TabIndex = 0;
-			this.pictureBox1.TabStop = false;
-			// 
-			// checkBox1
-			// 
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Location = new System.Drawing.Point(12, 12);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(76, 17);
-			this.checkBox1.TabIndex = 1;
-			this.checkBox1.Text = "Auto Save";
-			this.checkBox1.UseVisualStyleBackColor = true;
-			// 
-			// MainForm
-			// 
-			this.AllowDrop = true;
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(284, 262);
-			this.Controls.Add(this.checkBox1);
-			this.Controls.Add(this.pictureBox1);
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Name = "MainForm";
-			this.Text = "jtex";
-			this.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainForm_DragDrop);
-			this.DragEnter += new System.Windows.Forms.DragEventHandler(this.MainForm_DragEnter);
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			this.ResumeLayout(false);
-			this.PerformLayout();
-
+	        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+	        this.displayBox = new InterpolationPictureBox();
+	        this.autoSaveInput = new System.Windows.Forms.CheckBox();
+	        ((System.ComponentModel.ISupportInitialize) (this.displayBox)).BeginInit();
+	        this.SuspendLayout();
+	        //
+	        // pictureBox1
+	        //
+	        this.displayBox.InterpolationMode = InterpolationMode.NearestNeighbor;
+	        this.displayBox.Location = new System.Drawing.Point(12, 35);
+	        this.displayBox.Name = "displayBox";
+	        this.displayBox.Size = new System.Drawing.Size(260, 260);
+	        this.displayBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+	        this.displayBox.TabIndex = 0;
+	        this.displayBox.TabStop = false;
+	        //
+	        // checkBox1
+	        //
+	        this.autoSaveInput.AutoSize = true;
+	        this.autoSaveInput.Location = new System.Drawing.Point(12, 12);
+	        this.autoSaveInput.Name = "autoSaveInput";
+	        this.autoSaveInput.Size = new System.Drawing.Size(76, 17);
+	        this.autoSaveInput.TabIndex = 1;
+	        this.autoSaveInput.Text = "Auto Save";
+	        this.autoSaveInput.UseVisualStyleBackColor = true;
+	        //
+	        // MainForm
+	        //
+	        this.AllowDrop = true;
+	        this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+	        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+	        this.ClientSize = new System.Drawing.Size(284, 306);
+	        this.Controls.Add(this.autoSaveInput);
+	        this.Controls.Add(this.displayBox);
+	        this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+	        this.Name = "MainForm";
+	        this.Text = "jtex";
+	        this.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainForm_DragDrop);
+	        this.DragEnter += new System.Windows.Forms.DragEventHandler(this.MainForm_DragEnter);
+	        ((System.ComponentModel.ISupportInitialize) (this.displayBox)).EndInit();
+	        this.ResumeLayout(false);
+	        this.PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private InterpolationPictureBox displayBox;
+        private System.Windows.Forms.CheckBox autoSaveInput;
     }
 }
 

@@ -36,7 +36,7 @@ namespace Jtex
             {
                 if (!File.Exists(path))
                     throw new Exception("Can only accept files, not folders.");
-                pictureBox1.Image = Jupiter.MakeBmp(path, checkBox1.Checked, false);
+                displayBox.Image = Jupiter.MakeBmp(path, autoSaveInput.Checked, false);
             }
             catch (Exception) { System.Media.SystemSounds.Asterisk.Play(); }
         }
